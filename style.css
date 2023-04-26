@@ -27,11 +27,7 @@ body {
 }
 
 .threed {
-  background-image: linear-gradient(
-    0deg,
-    rgb(1, 185, 10),
-    rgb(70, 129, 255)
-  );
+  background-image: linear-gradient(0deg, rgb(0, 255, 13), rgb(0, 89, 255));
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -54,6 +50,18 @@ body {
 .navbar .right a:hover {
   text-decoration: underline;
   color: black;
+}
+
+.navbar .hamburger {
+    display: none;
+}
+
+.navbar .bar {
+    background-color: black;
+    height: 4px;
+    width: 36px;
+    margin: 3px;
+    border-radius: 10px;
 }
 
 .project-grid {
@@ -145,9 +153,9 @@ body {
 }
 
 .footer {
-    font-size: 18px;
-    text-align: center;
-    padding: 64px;
+  font-size: 18px;
+  text-align: center;
+  padding: 64px;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -166,10 +174,30 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-  body {
-    padding: 4px;
+  .navbar {
+    padding: 16px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background-color: white;
+    width: 100%;
+
+  }
+  .navbar .left {
+    font-size: 28px;
+  }
+  .navbar .right {
+    display: none;
+  }
+  .navbar .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .project-grid {
+    margin-top: 80px;
     grid-template-areas:
       "eth eth"
       "alphabet alphabet"
@@ -179,7 +207,6 @@ body {
       "cup cup"
       "foam foam"
       "dimensional dimensional";
-    gap: 12px;
   }
   .project .overlay {
     font-size: 24px;
@@ -189,5 +216,3 @@ body {
     font-size: 14px;
   }
 }
-
-
